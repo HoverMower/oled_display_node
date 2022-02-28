@@ -628,7 +628,7 @@ int  displayUpdate(std::string text, int attributes, int row, int column, int nu
     messageLength = numChars;
   }
 
-  ROS_INFO("%s: Write '%s' to row %d and column %d\n", THIS_NODE_NAME, text.c_str(), row, column);
+ // ROS_INFO("%s: Write '%s' to row %d and column %d\n", THIS_NODE_NAME, text.c_str(), row, column);
 
   dispCtx_t oledDispCtx;
   char charBuf[120];
@@ -682,10 +682,10 @@ int displaySetBrightness(int brightness, int semLock)
  */
 void displayApiCallback(const oled_display_node::DisplayOutput::ConstPtr& msg)
 {
-  ROS_INFO("%s heard display output msg: of actionType %d row %d column %d numChars %d attr 0x%x text %s comment %s]",
+ /* ROS_INFO("%s heard display output msg: of actionType %d row %d column %d numChars %d attr 0x%x text %s comment %s]",
                 THIS_NODE_NAME, msg->actionType, msg->row, msg->column, msg->numChars, msg->attributes,
                 msg->text.c_str(), msg->comment.c_str());
-
+*/
   int i2cSemLockId = -9;
 
    // Now send data to the display
